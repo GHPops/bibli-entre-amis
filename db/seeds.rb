@@ -19,6 +19,7 @@ user1 = User.create(
   password: "1234567"
 )
 
+puts 'creating books'
 
 livre1 = Livre.create(
   titre: "Le mage du Kremlin",
@@ -29,5 +30,83 @@ livre1 = Livre.create(
 livre2 = Livre.create(
   titre: "Les enfants sont rois",
   auteur: "Delphine de Vigan",
+  note: 3
+)
+
+livre3 = Livre.create(
+  titre: "Le poids du papillon",
+  auteur: "Erri de Luca",
+  note: 2
+)
+
+livre4 = Livre.create(
+  titre: "GPS",
+  auteur: "Lucie Rico",
+  note: 1
+)
+
+livre5 = Livre.create(
+  titre: "L’invention de nos vies",
+  auteur: "Karine Tuil",
+  note: 3
+)
+
+livre6 = Livre.create(
+  titre: "La place",
+  auteur: "Annie Ernaux",
+  note: 3
+)
+
+livre7 = Livre.create(
+  titre: "La treizième heure",
+  auteur: "Emmanuelle Bayamack Tam",
+  note: 2
+)
+
+livre8 = Livre.create(
+  titre: "Madame Sagan",
+  auteur: "Geneviève Moll",
+  note: 2
+)
+
+livre9 = Livre.create(
+  titre: "Lady Chevy",
+  auteur: "John Woods",
+  note: 2
+)
+
+livre10 = Livre.create(
+  titre: "Le doorman",
+  auteur: "Madeleine Assas",
+  note: 4
+)
+
+livre11 = Livre.create(
+  titre: "Avant que la nuit ne m’emporte",
+  auteur: "Guy Cuevas",
+  note: 3
+)
+
+livre12 = Livre.create(
+  titre: "Lumière d’été puis vient la nuit",
+  auteur: "Jon Kalman Stefansson",
+  note: 2
+)
+
+livre13 = Livre.create(
+  titre: "La panthère des neiges",
+  auteur: "Sylvain Tesson",
+  note: 2
+)
+
+livre14 = Livre.create(
+  titre: "L’affaire Alaska Sanders",
+  auteur: "Joël Dicker",
+  note: 2
+)
+
+livre15 = Livre.create(
+  titre: "L’histoire du fils",
+  auteur: "Marie Hélène Lafon",
   note: 3
 )
