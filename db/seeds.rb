@@ -110,3 +110,5 @@ livre15 = Livre.create(
   auteur: "Marie Hélène Lafon",
   note: 3
 )
+
+puts "finished"
