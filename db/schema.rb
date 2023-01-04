@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_03_213257) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_04_185536) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,15 +24,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_213257) do
     t.index ["user_id"], name: "index_livres_on_user_id"
   end
 
-  create_table "réservations", force: :cascade do |t|
-    t.date "début"
+  create_table "reservations", force: :cascade do |t|
+    t.date "debut"
     t.date "fin"
     t.bigint "user_id", null: false
     t.bigint "livre_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["livre_id"], name: "index_réservations_on_livre_id"
-    t.index ["user_id"], name: "index_réservations_on_user_id"
+    t.index ["livre_id"], name: "index_reservations_on_livre_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_213257) do
   end
 
   add_foreign_key "livres", "users"
-  add_foreign_key "réservations", "livres"
-  add_foreign_key "réservations", "users"
+  add_foreign_key "reservations", "livres"
+  add_foreign_key "reservations", "users"
 end
