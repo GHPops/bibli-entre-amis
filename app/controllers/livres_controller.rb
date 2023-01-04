@@ -31,7 +31,7 @@ class LivresController < ApplicationController
   end
 
   def livre_params
-    params.require(:livre).permit(:starting_date, :end_date)
+    params.require(:livre).permit(:titre, :auteur, :note)
   end
 
 end
