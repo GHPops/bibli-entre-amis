@@ -1,7 +1,8 @@
 <h1> Livres </h1>
+
 <ul> <% @livres.each_with_index do |livre, index| %>
   <li>
-    <p><%= index %><%= livre.titre %> <%= livre.auteur %></p>
+    <%= index %><%= livre.titre %> <%= livre.auteur %>
   </li>
 <% end %>
 
