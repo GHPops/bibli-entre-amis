@@ -1,0 +1,11 @@
+<h1> Livres </h1>
+<ul> <% @livres.each_with_index do |livre, index| %>
+  <li>
+    <%= index %><%= livre.titre %> <%= livre.auteur %>
+  </li>
+<% end %>
+
+<%= link_to "Show", livre %>
+<%= link_to "Edit", edit_livre_path(livre) %>
+<%= link_to "Destroy", livre, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?" } %>
+</ul>
