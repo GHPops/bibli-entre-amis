@@ -2,10 +2,12 @@
 
 <ul> <% @livres.each_with_index do |livre, index| %>
   <li>
-    <p><%= index %>. <%= livre.titre %> - <%= livre.auteur %></p>
+    <div> <%= link_to livre_path(:id) %>
+    <p><%= index + 1 %>. <%= livre.titre %> - <%= livre.auteur %></p>
+    </div>
   </li>
 <% end %>
-
-<%= link_to "Show", @livre %>
-<%= link_to "Destroy", @livre, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?" } %>
 </ul>
+
+<%# trouver la redirection %>
+<%= link_to "Ajouter un livre" %>
