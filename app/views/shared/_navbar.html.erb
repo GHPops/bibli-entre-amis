@@ -1,6 +1,4 @@
-<div id="<%= "home-transparent" if action_name == 'home' %>">
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <div class="container-fluid">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= "home-transparent" if action_name == 'home' %>">    <div class="container-fluid">
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "https://cdn-icons-png.flaticon.com/512/1492/1492807.png" %>
       <% end %>

@@ -14,7 +14,13 @@ class LivresController < ApplicationController
   end
 
   def create
-  
+    @livre = Livre.new(livre_params)
+    @livre.user = current_user
+    if @livre.save
+      redirect_to livres_path, notice: "Livre ajouté à la base!"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -36,7 +42,7 @@ class LivresController < ApplicationController
   end
 
   def livre_params
-    params.require(:livre).permit(:titre, :auteur, :note, :user)
+    params.require(:livre).permit(:titre, :auteur, :note)
   end
 
 end

@@ -2,9 +2,11 @@
 
 <ul> <% @livres.each_with_index do |livre, index| %>
   <li>
-    <div> <%= link_to livre_path(:id) %>
-    <p><%= index + 1 %>. <%= livre.titre %> - <%= livre.auteur %></p>
-    </div>
+    <%= link_to livre_path(livre) do %>
+      <div>
+      <p><%= index + 1 %>. <%= livre.titre %> - <%= livre.auteur %></p>
+      </div>
+    <% end %>
   </li>
 <% end %>
 </ul>
