@@ -2,7 +2,7 @@
 
 <ul> <% @livres.each_with_index do |livre, index| %>
   <li>
-    <%= index %><%= livre.titre %> <%= livre.auteur %>
+    <p><%= index %>. <%= livre.titre %> - <%= livre.auteur %></p>
   </li>
 <% end %>
 
