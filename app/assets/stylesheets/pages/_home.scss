@@ -1,1 +1,56 @@
 // Specific CSS for your home-page
+#banner-hp {
+  width: 100vw;
+  height: 93vh;
+  position: relative;
+  background-position: center;
+    img {
+    width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+}
+
+
+h1, .hp {
+  font-size: 6.5rem;
+  color: azure;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-bottom: 7rem;
+  padding-top: 2rem;
+}
+
+.link-hp {
+  color: #0D6EFD;
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #eacda3 0%, #d6ae7b  51%, #eacda3  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.link-hp a {
+  color: #0D6EFD;
+  text-decoration: none;
+  color: wheat;
+}

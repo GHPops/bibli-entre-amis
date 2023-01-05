@@ -1,4 +1,4 @@
-<h1> Livres </h1>
+<h2> Livres </h2>
 
 <ul> <% @livres.each_with_index do |livre, index| %>
   <li>
@@ -10,4 +10,4 @@
 </ul>
 
 <%# trouver la redirection %>
-<%= link_to "Ajouter un livre" %>
+<%= link_to "Ajouter un livre", new_livre_path %>
