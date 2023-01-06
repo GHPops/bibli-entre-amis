@@ -1,19 +1,18 @@
 <div class="container">
   <div class="card-livre">
     <h2>📘 Livres 📕</h2>
-
+    <div class="ajouter-livre d-flex">
+      <%= link_to "Ajouter un livre", new_livre_path %>
+    </div>
     <ul> <% @livres.each_with_index do |livre, index| %>
       <li>
         <%= link_to livre_path(livre) do %>
           <div>
-          <p><%= index + 1 %>. <%= livre.titre %> - <%= livre.auteur %></p>
+          <p><%= index + 1 %>. <%= livre.titre %> - <%= livre.auteur %> - <%= livre.note %>/5 </p>
           </div>
         <% end %>
       </li>
     <% end %>
     </ul>
-
-    <%# trouver la redirection %>
-    <%= link_to "Ajouter un livre", new_livre_path %>
   </div>
 </div>

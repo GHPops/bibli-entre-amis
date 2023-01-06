@@ -1,9 +1,23 @@
 .card-livre {
-  border: solid 4px rgb(105, 59, 148);
+  border: solid 1px rgb(140, 140, 140);
   border-radius: 5px;
-  padding: 15px;
+  padding: 1rem;
+  margin: 1rem;
     h2 {
       display: flex;
       justify-content: center;
     }
+}
+
+.ajouter-livre {
+  justify-content: end;
+}
+
+a {
+  text-decoration: none;
+  color: #666666;
+}
+
+a:hover {
+  color: black;
 }
