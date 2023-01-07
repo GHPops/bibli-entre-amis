@@ -1,0 +1,5 @@
+       <%= simple_form_for([@livre, @reservation]) do |f| %>
+           <%= f.input :start_date, as: :string, type: :text %>
+           <%= f.input :end_date, as: :string, type: :text %>
+           <%= f.submit "Book", class: "btn btn-primary" %>
+        <% end %>

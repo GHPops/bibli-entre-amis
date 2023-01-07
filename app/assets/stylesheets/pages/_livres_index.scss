@@ -7,6 +7,9 @@
       display: flex;
       justify-content: center;
     }
+    p {
+      margin: 0;
+    }
 }
 
 .ajouter-livre {
@@ -20,4 +23,13 @@ a {
 
 a:hover {
   color: black;
+}
+
+.card-livre-element p {
+  margin-left: 1rem;
+}
+
+.card-livre-element {
+  display: flex;
+  align-items: baseline;
 }
