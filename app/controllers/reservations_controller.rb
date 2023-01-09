@@ -1,20 +1,18 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  before_action :set_livre, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @reservation = Reservation.new
   end
 
-  def show
-  end
-
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.livre = @livre
     @reservation.user = current_user
     if @reservation.save
-      redirect_to livres_path, notice: "Livre réservé"
+      redirect_to livre_path(livre), notice: "Livre réservé"
     else
-      render :new, status: :unprocessable_entity
+      redirect_to livre_path(livre), notice: "Echec de la réservation"
     end
   end
 
@@ -32,8 +30,8 @@ class ReservationsController < ApplicationController
 
   private
 
-  def set_reservation
-    @reservation = reservation.find(params[:id])
+  def set_livre
+    @livre = Livre.find(params[:livre_id])
   end
 
   def reservation_params
