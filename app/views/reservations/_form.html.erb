@@ -1,24 +1,28 @@
- <%= simple_form_for [@livre, @reservation],
-                                  html: {
-                                    data: {
-                                      controller: 'flatpickr'
-                                    }
-                                  } do |f| %>
-                <%= f.input :debut,
-                              label: "Sélectionner vos dates de réservation",
-                              as: :string,
-                              input_html: {
-                                data: {
-                                  flatpickr_target: 'startDateInput',
-                                }
-                              } %>
-                <%= f.input :fin,
-                              label: false,
-                              as: :string,
-                              input_html: {
-                                data: {
-                                  flatpickr_target: 'endDateInput'
-                                }
-                              } %>
-                <%= f.submit "Réserver", class: "btn btn-grad btn-form" %>
-              <% end %>
+<div class="row">
+  <div class="col">
+    <%= simple_form_for [@livre, @reservation],
+                        html: {
+                          data: {
+                            controller: 'flatpickr'
+                          }
+                        } do |f| %>
+      <%= f.input :debut,
+                    label: "Sélectionnez vos dates de réservation",
+                    as: :string,
+                    input_html: {
+                      data: {
+                        flatpickr_target: 'startDateInput',
+                      }
+                    } %>
+      <%= f.input :fin,
+                    label: false,
+                    as: :string,
+                    input_html: {
+                      data: {
+                        flatpickr_target: 'endDateInput'
+                      }
+                    } %>
+      <%= f.submit "Réserver", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
