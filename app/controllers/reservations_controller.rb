@@ -1,5 +1,8 @@
 class ReservationsController < ApplicationController
   before_action :set_livre, only: [:new, :create, :edit, :update, :destroy]
+  def index
+    @reservations = Reservation.all
+  end
 
   def new
     @reservation = Reservation.new
