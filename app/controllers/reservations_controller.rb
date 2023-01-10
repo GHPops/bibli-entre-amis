@@ -10,9 +10,9 @@ class ReservationsController < ApplicationController
     @reservation.livre = @livre
     @reservation.user = current_user
     if @reservation.save
-      redirect_to livre_path(livre), notice: "Livre réservé"
+      redirect_to livre_path(@livre), notice: "Livre réservé"
     else
-      redirect_to livre_path(livre), notice: "Echec de la réservation"
+      redirect_to livre_path(@livre), notice: "Echec de la réservation"
     end
   end
 

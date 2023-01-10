@@ -21,7 +21,18 @@ body {
   top:0;
   z-index: 999;
   width: 100vw;
+  padding: 0;
   a {
     color: white;
   }
+}
+
+.fa-book {
+  font-size: 2rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.container-fluid {
+  padding-top: 0;
 }
