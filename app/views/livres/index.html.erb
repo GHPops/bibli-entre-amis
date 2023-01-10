@@ -9,7 +9,7 @@
         <%= link_to livre_path(livre) do %>
           <div class="card-livre-element">
           <p><%= index + 1 %>. <%= livre.titre %> - <%= livre.auteur %> - <%= livre.note %>/5 </p>
-          <button type="button" class="btn btn-light"><%= link_to "Réserver", new_livre_reservation_path(livre) %></button>
+          <button type="button" class="btn btn-outline-secondary btn-reserver"><%= link_to "Réserver", new_livre_reservation_path(livre) %></button>
           </div>
         <% end %>
       </li>
