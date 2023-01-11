@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_livre, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_reservation, only: [:edit, :update, :destroy]
   def index
     @reservations = Reservation.all
   end
@@ -29,12 +29,14 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    @reservation.destroy
+    redirect_to livre_reservations_path, notice: "Réservation annulée"
   end
 
   private
 
-  def set_livre
-    @livre = Livre.find(params[:livre_id])
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
   end
 
   def reservation_params

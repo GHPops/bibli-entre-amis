@@ -1,6 +1,11 @@
 <div class="container">
   <h2 class="resa">Toutes mes réservations</h2>
+
+  <ul><% @reservations.each do |reservation| %>
+    <li>
+      <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
+      <%= link_to "Annuler la réservation", livre_reservations_path(reservation), method: :delete, class: "btn btn-info" %>
+    </li>
+      <% end %>
+  </ul>
 </div>
-<% @reservations.each do |reservation| %>
-<%= reservation.user.email %><%= reservation.debut %> <%= reservation.debut %>
-<% end %>

@@ -1,6 +1,8 @@
-<%= simple_form_for(@livre) do |f| %>
-  <%= f.input :titre %>
-  <%= f.input :auteur %>
-  <%= f.input :note %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for(@livre) do |f| %>
+    <%= f.input :titre %>
+    <%= f.input :auteur %>
+    <%= f.input :note %>
+    <%= f.submit 'Créer ce nouveau livre' %>
+  <% end %>
+</div>
