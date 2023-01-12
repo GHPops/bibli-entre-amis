@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:edit, :update, :destroy]
+  before_action :set_livre, only: %i[new create]
+  before_action :set_reservation, only: %i[edit update destroy]
   def index
     @reservations = Reservation.all
   end
@@ -9,13 +10,14 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    # raise
     @reservation = Reservation.new(reservation_params)
     @reservation.livre = @livre
     @reservation.user = current_user
     if @reservation.save
-      redirect_to livre_path(@livre), notice: "Livre réservé"
+      redirect_to livre_reservations_path, notice: "Livre réservé"
     else
-      redirect_to livre_path(@livre), notice: "Echec de la réservation"
+      render :new, status: :unprocessable_entity, notice: "Réservation impossible"
     end
   end
 
@@ -29,11 +31,16 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    # raise
     @reservation.destroy
-    redirect_to livre_reservations_path, notice: "Réservation annulée"
+    redirect_to reservation_path, notice: "Réservation annulée"
   end
 
   private
+
+  def set_livre
+    @livre = Livre.find(params[:livre_id])
+  end
 
   def set_reservation
     @reservation = Reservation.find(params[:id])

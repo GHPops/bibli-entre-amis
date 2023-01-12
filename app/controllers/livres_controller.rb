@@ -33,6 +33,8 @@ class LivresController < ApplicationController
   end
 
   def destroy
+    @livre.destroy
+    redirect_to livres_path, notice: "Livre supprimé"
   end
 
   private

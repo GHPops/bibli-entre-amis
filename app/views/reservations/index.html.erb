@@ -4,7 +4,7 @@
   <ul><% @reservations.each do |reservation| %>
     <li>
       <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
-      <%= link_to "Annuler la réservation", livre_reservations_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
+      <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
     </li>
       <% end %>
   </ul>

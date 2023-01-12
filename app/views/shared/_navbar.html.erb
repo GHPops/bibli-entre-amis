@@ -16,6 +16,9 @@
             <li class="nav-item">
               <%= link_to "Mes réservations", livre_reservations_path(:livre_id), class: "nav-link" %>
             </li>
+            <li class="nav-item">
+              <%= link_to "Bibliothèque", livres_path(:livre_id), class: "nav-link" %>
+            </li>
             <li class="nav-item dropdown">
               <%= image_tag "https://avatars.githubusercontent.com/u/106176972?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end <%= "home-bgb" if action_name == 'home' %>" aria-labelledby="navbarDropdown">
