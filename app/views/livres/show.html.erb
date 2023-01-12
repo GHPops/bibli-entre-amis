@@ -3,5 +3,5 @@
 <h2><strong>Détails sur le livre</strong></h2>
 
 <p>Réservations prévues : </p>
-
+<%= @reservations %>
 <%= link_to "Supprimer", @livre, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?" } %>

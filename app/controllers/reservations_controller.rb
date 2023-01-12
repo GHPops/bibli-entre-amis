@@ -10,7 +10,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    # raise
     @reservation = Reservation.new(reservation_params)
     @reservation.livre = @livre
     @reservation.user = current_user
@@ -31,7 +30,6 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    # raise
     @reservation.destroy
     redirect_to reservation_path, notice: "Réservation annulée"
   end
