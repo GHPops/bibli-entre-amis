@@ -3,7 +3,5 @@
 <h2><strong>Détails sur le livre</strong></h2>
 
 <p>Réservations prévues : </p>
-<%= @reservations.each do |reservation| %>
-<%= reservation.debut%>
+
 <%= link_to "Supprimer", @livre, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?" } %>
-<% end %>
