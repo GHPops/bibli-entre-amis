@@ -1,8 +1,9 @@
 .card-livre {
-  border: solid 1px rgb(140, 140, 140);
   border-radius: 5px;
+  background-color: white;
   padding: 1rem;
   margin: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
     h2 {
       display: flex;
       justify-content: center;
@@ -10,6 +11,10 @@
     p {
       margin: 0;
     }
+}
+
+body {
+background-image: url("livresbg.png");
 }
 
 .ajouter-livre {
