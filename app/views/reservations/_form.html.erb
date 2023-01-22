@@ -7,7 +7,7 @@
                           }
                         } do |f| %>
       <%= f.input :debut,
-                    label: "Sélectionnez vos dates de réservation",
+                    label: "Sélectionnez vos dates de réservation pour ce livre",
                     as: :string,
                     input_html: {
                       data: {
@@ -22,7 +22,7 @@
                         flatpickr_target: 'endDateInput'
                       }
                     } %>
-      <%= f.submit "Réserver", class: "btn btn-primary" %>
+      <%= f.submit "Réserver", class: "btn btn-grad" %>
     <% end %>
   </div>
 </div>
