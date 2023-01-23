@@ -19,6 +19,7 @@
 
 .ajouter-livre {
   justify-content: end;
+  flex-direction: row-reverse !important;
 }
 
 a {
@@ -42,4 +43,8 @@ a:hover {
 .btn-reserver {
   margin-left: 2rem;
   margin-top: 2rem;
+}
+
+#btn-ajouter a {
+  color: white;
 }

@@ -1,5 +1,7 @@
-<%= link_to "Retour", livres_path %>
 <div class="container">
-  <h2>Créer un livre dans la bibliothèque</h2>
-  <%= render "form", livres: @livre %>
+  <%= link_to "Retour", livres_path %>
+  <div class="form-livres d-flex">
+    <h2>Créer un livre dans la bibliothèque</h2>
+    <%= render "form", livres: @livre %>
+  </div>
 </div>
