@@ -11,6 +11,7 @@ class LivresController < ApplicationController
   end
 
   def show
+    @reservations = Reservation.all
   end
 
   def create
