@@ -1,6 +1,6 @@
   <%= simple_form_for(@livre) do |f| %>
     <%= f.input :titre %>
     <%= f.input :auteur %>
-    <%= f.input :note %>
-    <%= f.submit 'Créer ce nouveau livre' %>
+    <%= f.input :note, collection: 0..5, label: "Note /5" %>
+    <%= f.submit 'Créer ce nouveau livre', class: "btn btn-grad" %>
   <% end %>

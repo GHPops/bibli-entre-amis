@@ -4,5 +4,5 @@ class Livre < ApplicationRecord
 
   validates :titre, presence: true
   validates :auteur, presence: true
-  validates :note, numericality: { only_integer: true }
+  validates :note, numericality: { only_integer: true }, length: { maximum: 5 }
 end
