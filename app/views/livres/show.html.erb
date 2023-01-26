@@ -1,21 +1,26 @@
-<%= link_to "Retour", livres_path %>
+<body class="background">
+  <div class="container">
+    <%= link_to "Retour", livres_path %>
 
-<h2><strong>Détails sur le livre</strong></h2>
+    <h2><strong>Détails sur le livre</strong></h2>
 
-<p>Réservations prévues : </p>
-  <% @reservations.each do |reservation| %>
-    <% if reservation.livre_id == @livre.id %>
-      <div class="card-resa">
-        <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut.strftime('%d-%m-%Y') %> au <%= reservation.fin.strftime('%d-%m-%Y') %></p>
-        <%# script pour voir dans la console  %>
-        <script>console.log("<%= "@user.id"  %> ");</script>
-        <script>console.log("<%= @user.id %>");</script>
-        <script>console.log("<%= "reservation.user_id"  %> ");</script>
-        <script>console.log("<%= reservation.user_id %>");</script>
+    <p>Réservations prévues : </p>
+      <% @reservations.each do |reservation| %>
+        <% if reservation.livre_id == @livre.id %>
+          <div class="card-resa">
+            <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut.strftime('%d-%m-%Y') %> au <%= reservation.fin.strftime('%d-%m-%Y') %>
+            par <%= @user.email %></p>
+            <%# script pour voir dans la console  %>
+            <script>console.log("<%= "@user.id"  %> ");</script>
+            <script>console.log("<%= @user.id %>");</script>
+            <script>console.log("<%= "reservation.user_id"  %> ");</script>
+            <script>console.log("<%= reservation.user_id %>");</script>
 
-        <% if reservation.user_id == @user.id %>
-          <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
-        <% end %>
-      </div>
-    <%end%>
-  <% end %>
+            <% if reservation.user_id == @user.id %>
+              <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
+            <% end %>
+          </div>
+        <%end%>
+      <% end %>
+  </div>
+</body>
