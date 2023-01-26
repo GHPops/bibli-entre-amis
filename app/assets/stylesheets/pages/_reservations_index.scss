@@ -6,11 +6,15 @@
 .card-resa {
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: white;
   margin: 1rem;
   padding: 1rem;
-  background-color: white;
 }
 
 #ul {
   list-style-type: none;
+}
+
+.body-background-resa {
+  background-image: url("https://images.rawpixel.com/image_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA2L3YxMDEzLXAtMDAxMC1rc2k4NjVxZC5qcGc.jpg");
 }
