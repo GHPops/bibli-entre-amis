@@ -12,6 +12,10 @@ class LivresController < ApplicationController
 
   def show
     @reservations = Reservation.all
+    # @reservations = Reservation.livre_id = @livre
+    # reservations = Reservation.livre_id
+    # reservations.find(@livre)
+    @user = current_user
   end
 
   def create
