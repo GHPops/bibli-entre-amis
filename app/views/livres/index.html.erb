@@ -1,5 +1,15 @@
 <body class="body-bg">
   <div class="container">
+    <div class="searchbar">
+      <%= form_with url: livres_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Trouver un livre / auteur"
+      %>
+      <%= submit_tag "Rechercher", class: "btn btn-grad" %>
+      <% end %>
+    </div>
     <div class="card-livre">
       <h2>📘 Livres 📕</h2>
       <div class="ajouter-livre d-flex">

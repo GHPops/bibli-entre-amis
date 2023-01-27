@@ -4,6 +4,12 @@ class LivresController < ApplicationController
 
   def index
     @livres = Livre.all
+    if params[:query].present?
+      sql_query = "titre ILIKE :query OR auteur ILIKE :query"
+      @livres = Livre.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @livres = Livre.all
+    end
   end
 
   def new
