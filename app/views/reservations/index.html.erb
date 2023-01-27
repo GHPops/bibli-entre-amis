@@ -1,6 +1,8 @@
 <div class="body-background-resa">
   <div class="container">
-    <%= link_to "Retour", livres_path %>
+    <div class="retour-button mt-4">
+      <%= link_to "◀︎ Retour", livres_path %>
+    </div>
     <h2 class="resa">Toutes mes réservations</h2>
 
       <ul id="ul"><% @reservations.each do |reservation| %>
