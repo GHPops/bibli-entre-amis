@@ -48,3 +48,11 @@ a:hover {
 #btn-ajouter a {
   color: white;
 }
+
+.searchbar .d-flex {
+  margin: 0.5rem;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
