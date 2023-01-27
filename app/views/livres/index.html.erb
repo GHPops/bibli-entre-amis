@@ -15,6 +15,7 @@
       <div class="ajouter-livre d-flex">
         <button type="button" class="btn btn-secondary m-3" id="btn-ajouter"><%= link_to "+ Ajouter un livre", new_livre_path %></button>
       </div>
+      <h5 class="marge-h5"> Titre - Auteur - Note /5</h5>
       <ul style="list-style-type:none;"> <% @livres.each_with_index do |livre, index| %>
         <li>
           <%= link_to livre_path(livre) do %>
