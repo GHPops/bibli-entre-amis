@@ -41,17 +41,17 @@ h1, .hp {
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
+  font-weight: bold;
 }
 
 .btn-grad:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .link-hp a {
-  color: #0D6EFD;
   text-decoration: none;
-  color: #91846d;
   font-size: 2rem;
 }
