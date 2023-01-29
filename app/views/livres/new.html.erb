@@ -1,9 +1,11 @@
-<div class="retour-button m-4">
-  <%= link_to "◀︎ Retour", livres_path %>
-</div>
-<div class="container d-flex">
-  <div class="form-livres d-flex mt-3">
-    <h2>Créer un livre dans la bibliothèque</h2>
-    <%= render "form", livres: @livre %>
+<body class="body-new-livre">
+  <div class="retour-button m-4">
+    <%= link_to "◀︎ Retour", livres_path %>
   </div>
-</div>
+  <div class="container d-flex">
+    <div class="form-livres d-flex mt-3">
+      <h2>Créer un livre dans la bibliothèque</h2>
+      <%= render "form", livres: @livre %>
+    </div>
+  </div>
+</body>
