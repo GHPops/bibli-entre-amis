@@ -5,8 +5,8 @@
     </div>
     <h2 class="resa">Toutes mes réservations</h2>
       <%= "Ma(es) réservation(s) en cours" %>
-      <% "Ma(es) réservation(s) à venir" %>
-      <% "Ma(es) réservation(s) passées" %>
+      <%= "Ma(es) réservation(s) à venir" %>
+      <%= "Ma(es) réservation(s) passées" %>
       <ul id="ul"><% @reservations.each do |reservation| %>
     <div class="card-resa">
         <li>

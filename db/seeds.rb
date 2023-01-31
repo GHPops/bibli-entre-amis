@@ -16,22 +16,22 @@ puts 'creating user'
 
 user1 = User.create!(
   email: "user1@default.com",
-  password: "1234567"
+  password: "1234567",
 )
 
 user2 = User.create!(
   email: "user2@default.com",
-  password: "1234567"
+  password: "1234567",
 )
 
 user3 = User.create!(
   email: "user3@default.com",
-  password: "1234567"
+  password: "1234567",
 )
 
 user4 = User.create!(
   email: "user4@default.com",
-  password: "1234567"
+  password: "1234567",
 )
 
 puts 'creating books'
