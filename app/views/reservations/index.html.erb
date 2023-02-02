@@ -8,7 +8,7 @@
         <% @reservations.each do |reservation| %>
           <%# <% if reservation.current_user %>
             <% if reservation.fin < Date.current %>
-              <%= "Ma(es) réservation(s) passées" %>
+              <p><strong><%= "Ma(es) réservation(s) passées" %></strong></p>
                 <div class="card-resa">
                   <li>
                     <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
@@ -16,7 +16,7 @@
                   </li>
                 </div>
             <% elsif reservation.debut > Date.current %>
-              <%= "Ma(es) réservation(s) à venir" %>
+              <p><strong><%= "Ma(es) réservation(s) à venir" %></strong></p>
                   <div class="card-resa">
                   <li>
                     <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
@@ -24,7 +24,7 @@
                   </li>
                 </div>
             <% else %>
-              <%= "Ma(es) réservation(s) en cours" %>
+              <p><strong><%= "Ma(es) réservation(s) en cours" %></strong></p>
                   <div class="card-resa">
                   <li>
                     <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
