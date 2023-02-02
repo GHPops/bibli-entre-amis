@@ -10,7 +10,7 @@
       <ul id="ul"><% @reservations.each do |reservation| %>
     <div class="card-resa">
         <li>
-          <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut.strftime('%d-%m-%Y') %> au <%= reservation.fin.strftime('%d-%m-%Y') %></p>
+          <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
           <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
         </li>
     </div>
