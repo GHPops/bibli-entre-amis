@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   before_action :set_livre, only: %i[new create]
   before_action :set_reservation, only: %i[show edit update destroy]
+
   def index
     @reservations = Reservation.all
   end
