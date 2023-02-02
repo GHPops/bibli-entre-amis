@@ -4,17 +4,34 @@
       <%= link_to "◀︎ Retour", livres_path %>
     </div>
     <h2 class="resa">Toutes mes réservations</h2>
-      <%= "Ma(es) réservation(s) en cours" %>
-      <%= "Ma(es) réservation(s) à venir" %>
-      <%= "Ma(es) réservation(s) passées" %>
-      <ul id="ul"><% @reservations.each do |reservation| %>
-    <div class="card-resa">
-        <li>
-          <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
-          <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
-        </li>
-    </div>
+      <ul id="ul">
+        <% @reservations.each do |reservation| %>
+          <% if reservation.fin < Date.current %>
+            <%= "Ma(es) réservation(s) passées" %>
+              <div class="card-resa">
+                <li>
+                  <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
+                  <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
+                </li>
+              </div>
+          <% elsif reservation.debut > Date.current %>
+            <%= "Ma(es) réservation(s) à venir" %>
+                <div class="card-resa">
+                <li>
+                  <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
+                  <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
+                </li>
+              </div>
+          <% else %>
+            <%= "Ma(es) réservation(s) en cours" %>
+                <div class="card-resa">
+                <li>
+                  <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
+                  <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
+                </li>
+              </div>
           <% end %>
+        <% end %>
       </ul>
   </div>
 </div>
