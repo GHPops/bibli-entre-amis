@@ -39,3 +39,14 @@
       </ul>
   </div>
 </div>
+
+<% @reservations.each do |reservation| %>
+  <% if reservation.fin < Date.current %>
+  <p>réservation(s) passée(s)</p>
+    <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
+  <% elsif reservation.debut > Date.current %>
+    <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
+  <% else %>
+    <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
+  <% end %>
+<% end %>
