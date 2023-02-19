@@ -16,22 +16,26 @@ puts 'creating user'
 
 user1 = User.create!(
   email: "user1@default.com",
-  password: "1234567"
+  password: "1234567",
+  username: "Corinne"
 )
 
 user2 = User.create!(
   email: "user2@default.com",
-  password: "1234567"
+  password: "1234567",
+  username: "Nicole"
 )
 
 user3 = User.create!(
   email: "user3@default.com",
-  password: "1234567"
+  password: "1234567",
+  username: "Pierre"
 )
 
 user4 = User.create!(
   email: "user4@default.com",
-  password: "1234567"
+  password: "1234567",
+  username: "Agnès"
 )
 
 puts 'creating books'
