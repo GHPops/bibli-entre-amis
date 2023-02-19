@@ -3,7 +3,9 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show edit update destroy]
 
   def index
-    @reservations = Reservation.all
+    @past_reservations = Reservation.past.current_user
+    @upcoming_reservations = Reservation.upcoming.current_user
+    @current_reservations = Reservation.current.current_user
   end
 
   def new
