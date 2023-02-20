@@ -5,37 +5,18 @@
     </div>
     <h2 class="resa">Toutes mes réservations</h2>
       <ul id="ul">
-        <% @reservations.each do |reservation| %>
-          <% if reservation.user_id %>
             <p><strong><%= "Ma(es) réservation(s) passées" %></strong></p>
-              <% if reservation.fin < Date.current %>
-                <div class="card-resa">
-                  <li>
-                    <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
-                    <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
-                  </li>
-                </div>
-            <p><strong><%= "Ma(es) réservation(s) à venir" %></strong></p>
-              <% elsif reservation.debut > Date.current %>
-                  <div class="card-resa">
-                  <li>
-                    <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
-                    <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
-                  </li>
-                </div>
-            <p><strong><%= "Ma(es) réservation(s) en cours" %></strong></p>
-              <% else %>
-                  <div class="card-resa">
-                  <li>
-                    <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut %> au <%= reservation.fin %></p>
-                    <%= link_to "Annuler la réservation", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
-                  </li>
-                </div>
+              <% @past_reservations.each do |reservation| %>
+                <%= render 'reservations/card', reservation: reservation %>
               <% end %>
-          <% else %>
-            <%= "" %>
-          <% end %>
-        <% end %>
+            <p><strong><%= "Ma(es) réservation(s) à venir" %></strong></p>
+              <% @upcoming_reservations.each do |reservation| %>
+                <%= render 'reservations/card', reservation: reservation %>
+              <% end %>
+            <p><strong><%= "Ma(es) réservation(s) en cours" %></strong></p>
+              <% @current_reservations.each do |reservation| %>
+                <%= render 'reservations/card', reservation: reservation %>
+              <% end %>
       </ul>
   </div>
 </div>
