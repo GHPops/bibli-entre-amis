@@ -14,9 +14,6 @@
                 <%= render 'reservations/card', reservation: reservation %>
               <% end %>
             <p><strong><%= "Ma(es) réservation(s) en cours" %></strong></p>
-              <% @current_reservations.each do |reservation| %>
-                <%= render 'reservations/card', reservation: reservation %>
-              <% end %>
       </ul>
   </div>
 </div>
