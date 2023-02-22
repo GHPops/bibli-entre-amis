@@ -10,6 +10,7 @@ class LivresController < ApplicationController
     else
       @livres = Livre.all
     end
+    @livre = Livre.new
   end
 
   def new

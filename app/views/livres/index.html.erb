@@ -12,9 +12,27 @@
     </div>
     <div class="card-livre">
       <h2> Livres </h2>
+
+<!-- Button trigger modal -->
       <div class="ajouter-livre d-flex">
-        <button type="button" class="btn btn-secondary m-3" id="btn-ajouter"><%= link_to "+ Ajouter un livre", new_livre_path %></button>
+        <button type="button" class="btn btn-secondary m-3" id="btn-ajouter" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        + Ajouter un livre</button>
       </div>
+<!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Nouveau livre</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= render 'form' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <h5 class="marge-h5"><strong>Titre - Auteur - Note /5</strong></h5>
       <ul style="list-style-type:none;"> <% @livres.each_with_index do |livre, index| %>
         <li>
