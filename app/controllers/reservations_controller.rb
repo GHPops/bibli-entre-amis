@@ -1,11 +1,12 @@
 class ReservationsController < ApplicationController
   before_action :set_livre, only: %i[new create]
   before_action :set_reservation, only: %i[show edit update destroy]
+  before_action :set_user, only: %i[index]
 
   def index
-    @past_reservations = Reservation.past
-    @upcoming_reservations = Reservation.upcoming
-    # @current_reservations = Reservation.current.current_user
+    @past_reservations = @user.reservations.past
+    @upcoming_reservations = @user.reservations.upcoming
+    @current_reservations = @user.reservations.current
   end
 
   def new
@@ -20,7 +21,7 @@ class ReservationsController < ApplicationController
     @reservation.livre = @livre
     @reservation.user = current_user
     if @reservation.save
-      redirect_to livre_reservations_path, notice: "Livre réservé"
+      redirect_to user_reservations_path(current_user), notice: "Livre réservé"
     else
       render :new, status: :unprocessable_entity, notice: "Réservation impossible"
     end
@@ -41,6 +42,10 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 
   def set_livre
     @livre = Livre.find(params[:livre_id])
