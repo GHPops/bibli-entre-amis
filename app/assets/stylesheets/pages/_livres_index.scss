@@ -45,6 +45,10 @@ a:hover {
   margin-top: 2rem;
 }
 
+.btn-reserver:hover a {
+  color: white;
+}
+
 #btn-ajouter a {
   color: white;
 }
@@ -70,6 +74,7 @@ a:hover {
   scroll-behavior: smooth;
 }
 
-// #anchor-top {
-//   scroll-behavior: smooth;
-// }
+.btn-retour-haut:hover {
+  background-color: #B8CDD5;
+  font-weight: bold;
+}
