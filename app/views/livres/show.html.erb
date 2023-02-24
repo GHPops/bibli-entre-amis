@@ -9,8 +9,8 @@
       <% @reservations.each do |reservation| %>
         <% if reservation.livre_id == @livre.id %>
           <div class="card-resa">
-            <p><strong><%= reservation.livre.titre %>  :</strong> <%= reservation.debut.strftime('%d-%m-%Y') %> au <%= reservation.fin.strftime('%d-%m-%Y') %>
-            par <%= @user.username %></p>
+            <p><strong><%= reservation.livre.titre %>  :</strong> du <%= reservation.debut.strftime('%d-%m-%Y') %> au <%= reservation.fin.strftime('%d-%m-%Y') %>
+            par <strong><%= @user.username %></strong></p>
             <%# script pour voir dans la console  %>
             <script>console.log("<%= "@user.id"  %> ");</script>
             <script>console.log("<%= @user.id %>");</script>
