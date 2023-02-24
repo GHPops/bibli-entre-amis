@@ -4,6 +4,7 @@
       <%= link_to "◀︎ Retour", livres_path %>
     </div>
     <h2 class="titre"><strong>Détails sur le livre</strong></h2>
+    <p><span class="emphasized">Appartient à : </span> <%= @livre.user.username %></p>
 
     <p><strong>Réservations prévues :</strong></p>
       <% @reservations.each do |reservation| %>
