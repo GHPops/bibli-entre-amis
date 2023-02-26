@@ -6,7 +6,7 @@
     <h2 class="titre"><strong>Détails sur le livre</strong></h2>
     <p><span class="emphasized">Appartient à : </span> <%= @livre.user.username %></p>
 
-    <p><strong>Réservations prévues :</strong></p>
+    <p><strong>Réservation(s) prévue(s) :</strong></p>
       <% @reservations.each do |reservation| %>
         <% if reservation.livre_id == @livre.id %>
           <div class="card-resa">
