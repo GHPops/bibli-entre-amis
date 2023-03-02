@@ -3,20 +3,22 @@
     <div class="retour-button mt-4">
       <%= link_to "◀︎ Retour", livres_path %>
     </div>
-    <h2 class="resa">Toutes mes réservations</h2>
-      <ul id="ul">
-        <p><strong><%= "Ma(es) réservation(s) passées" %></strong></p>
-          <% @past_reservations.each do |reservation| %>
-            <%= render 'reservations/card', reservation: reservation %>
-          <% end %>
-        <p><strong><%= "Ma(es) réservation(s) à venir" %></strong></p>
-          <% @upcoming_reservations.each do |reservation| %>
-            <%= render 'reservations/card', reservation: reservation %>
-          <% end %>
-        <p><strong><%= "Ma(es) réservation(s) en cours" %></strong></p>
-          <% @current_reservations.each do |reservation| %>
-            <%= render 'reservations/card', reservation: reservation %>
-          <% end %>
-      </ul>
+    <div class="resa-i">
+      <h2 class="resa">Toutes mes réservations</h2>
+        <ul id="ul">
+          <p><strong><%= "Ma(es) réservation(s) passées" %></strong></p>
+            <% @past_reservations.each do |reservation| %>
+              <%= render 'reservations/card', reservation: reservation %>
+            <% end %>
+          <p><strong><%= "Ma(es) réservation(s) à venir" %></strong></p>
+            <% @upcoming_reservations.each do |reservation| %>
+              <%= render 'reservations/card', reservation: reservation %>
+            <% end %>
+          <p><strong><%= "Ma(es) réservation(s) en cours" %></strong></p>
+            <% @current_reservations.each do |reservation| %>
+              <%= render 'reservations/card', reservation: reservation %>
+            <% end %>
+        </ul>
+    </div>
   </div>
 </div>
