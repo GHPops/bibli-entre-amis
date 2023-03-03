@@ -18,7 +18,8 @@ class LivresController < ApplicationController
   end
 
   def show
-    @reservations = Reservation.all
+    @reservations = @livre.reservations
+    # récupérer les réservation
     # @reservations = Reservation.livre_id = @livre
     # reservations = Reservation.livre_id
     # reservations.find(@livre)

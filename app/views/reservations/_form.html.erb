@@ -3,7 +3,8 @@
     <%= simple_form_for [@livre, @reservation],
                         html: {
                           data: {
-                            controller: 'flatpickr'
+                            controller: 'flatpickr',
+                            flatpickr_dates_value: @livre.flatpickr_booked_dates_object
                           }
                         } do |f| %>
       <%= f.input :debut,

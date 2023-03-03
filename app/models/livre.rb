@@ -1,4 +1,6 @@
 class Livre < ApplicationRecord
+  include LivreConcern
+
   belongs_to :user
   has_many :reservations, dependent: :destroy
 
